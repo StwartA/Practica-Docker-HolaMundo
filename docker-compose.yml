@@ -15,6 +15,7 @@ services:
       MYSQL_DATABASE: ejemplo_db
     depends_on:
       - db
+    command: bash -c "docker-php-ext-install pdo pdo_mysql && apache2-foreground"
 
   db:
     image: mysql:8.0
